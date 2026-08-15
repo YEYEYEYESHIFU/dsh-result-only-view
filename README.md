@@ -7,7 +7,8 @@ A "Results only" toggle for the DeepSeek Harness Web GUI. When enabled, the conv
 
 - **Default on**; the preference is remembered in `localStorage`.
 - **One live status line while the agent works**: during an active run, only the latest step of the current turn (running tool row, else the last tool row, else the streaming thinking row) is shown with native real-time updates; it disappears when the run settles.
-- **Restores activity animations** on the turn-status line and the running row, even under `prefers-reduced-motion: reduce`.
+- **Turn trace line**: after a turn settles, a compact "Processed N steps · Xs ▸" line appears in the turn tail; clicking it reveals that turn's process rows and collapses them again.
+- **General settings row**: show/hide the turn trace, and choose whether activity animations are restored under `prefers-reduced-motion: reduce`.
 - **Interactive cards are never hidden**: `ask_user_question` and `cordis_run` rows stay visible, and privileged-execution approval prompts render in the composer itself.
 - **Localized** through the client locale service: English (`Results only`) and Simplified Chinese (`只看结果`).
 
@@ -52,7 +53,8 @@ DeepSeek Harness Web 的「只看结果」开关。开启后，对话隐藏思�
 
 - **默认开启**，偏好保存在 `localStorage`。
 - **运行中仅显示一条实时状态行**：会话运行期间只展示本回合最新一步（正在执行的工具行 / 上一条工具行 / 正在流式输出的思考行），原生实时刷新；运行结束后自动收起。
-- **恢复活动光影**：即使在系统「减少动态效果」环境下，也恢复 Deep diving 流动光影与运行中行的光带扫过。
+- **回合痕迹行**：回合结束后，在回合尾部显示「已处理 N 步 · Xs ▸」，点击展开该回合的过程行，再次点击收起。
+- **设置面板**：在「常规」设置中可开关痕迹行、选择是否在系统「减少动态效果」下恢复活动光影。
 - **交互卡片永不隐藏**：`ask_user_question` 与 `cordis_run` 行始终可见；越权审批提示渲染在输入框位置，不会受影响。
 - **多语言**：通过客户端 locale 服务提供英文（`Results only`）与简体中文（`只看结果`）。
 

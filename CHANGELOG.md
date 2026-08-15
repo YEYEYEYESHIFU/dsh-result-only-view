@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.0] — turn trace, settings, performance
+
+- Added: a compact turn trace line ("Processed N steps · Xs ▸") in the turn
+  tail of every settled turn; clicking it reveals that turn's process rows
+  (native collapsed rows) and lets the user collapse them again.
+- Added: a General settings row (Results only) with two preferences —
+  show/hide the turn trace, and restore activity animations under
+  prefers-reduced-motion (both default on, persisted in localStorage).
+- Performance: removed the 800ms polling interval; refreshes are fully
+  event-driven (MutationObserver on node changes and data-state transitions).
+- Motion restore rules are now optional and rebuilt live when the setting
+  changes.
+
 ## [1.4.1] — robustness fixes
 
 - Fixed: whitelisted interactive cards keep their native display instead of
