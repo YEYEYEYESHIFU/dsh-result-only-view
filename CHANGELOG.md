@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.4.1] — robustness fixes
+
+- Fixed: whitelisted interactive cards keep their native display instead of
+  being forced to `flex` (could break card layout).
+- Fixed: plain rgba fallback for the sweep gradient on engines without
+  `color-mix()` support (older Safari).
+- Fixed: locale registration failure (e.g. namespace collision) now degrades
+  to the English dictionary instead of failing the plugin.
+- Fixed: `scripts/verify.mjs` is now included in the published files.
+
 ## [1.4.0] — stable release
 
 - Removed all development diagnostics; shipped the clean stable bundle.
