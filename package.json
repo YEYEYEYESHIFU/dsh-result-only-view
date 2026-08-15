@@ -1,0 +1,54 @@
+{
+  "name": "dsh-result-only-view",
+  "version": "1.4.0",
+  "description": "Results-only toggle for the DeepSeek Harness Web GUI: hides thinking and tool-call process nodes so a conversation shows only final answers, while keeping a single live status line (the latest running step) during agent activity. Whitelisted interactive cards (ask_user_question, cordis_run) stay visible; approval prompts always render in the composer. zh-CN / en localized.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "verify": "node scripts/verify.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YEYEYEYESHIFU/dsh-result-only-view.git"
+  },
+  "homepage": "https://github.com/YEYEYEYESHIFU/dsh-result-only-view#readme",
+  "bugs": {
+    "url": "https://github.com/YEYEYEYESHIFU/dsh-result-only-view/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek",
+    "ui",
+    "results-only",
+    "productivity"
+  ],
+  "author": "YEYEYEYESHIFU",
+  "license": "MIT"
+}

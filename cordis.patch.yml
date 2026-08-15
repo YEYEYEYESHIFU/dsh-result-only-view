@@ -1,0 +1,6 @@
+# dsh-result-only-view bundle patch: mounts the results-only toggle client into
+# any DSH web profile that lists this package in `dsh.profile.bundles`
+# (or installs it via `dsh plugin --profile <name> add ...`).
+- insert:
+    - id: result-only-view
+      name: 'dsh-result-only-view'
