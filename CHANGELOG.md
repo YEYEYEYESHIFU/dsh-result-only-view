@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.5.1] — trace count fix
+
+- Fixed: the turn trace line showed "Processed 0 steps" on the first render
+  (the DOM ref used for counting is attached only after mount); the count is
+  now recomputed before paint via useLayoutEffect.
+
 ## [1.5.0] — turn trace, settings, performance
 
 - Added: a compact turn trace line ("Processed N steps · Xs ▸") in the turn
