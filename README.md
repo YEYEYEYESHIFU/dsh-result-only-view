@@ -2,6 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/dsh-result-only-view)](https://www.npmjs.com/package/dsh-result-only-view)
 [![license](https://img.shields.io/npm/l/dsh-result-only-view)](./LICENSE)
+[![Awesome DSH Plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)
 
 A "Results only" toggle for the DeepSeek Harness Web GUI. When enabled, the conversation hides thinking rows and tool-call nodes, so only user messages and final assistant replies remain visible. Clicking the toggle restores the built-in collapsed-row view; the trajectory view is never affected and stays the full-detail option.
 
@@ -48,6 +49,7 @@ npm run verify   # files, syntax, bundle-id match, and an apply smoke test
 
 [![npm version](https://img.shields.io/npm/v/dsh-result-only-view)](https://www.npmjs.com/package/dsh-result-only-view)
 [![license](https://img.shields.io/npm/l/dsh-result-only-view)](./LICENSE)
+[![Awesome DSH Plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)
 
 DeepSeek Harness Web 的「只看结果」开关。开启后，对话隐藏思考行与工具调用节点，只保留用户消息与最终回复；点击开关可恢复官方单行折叠视图，「轨迹」视图不受影响、可随时查看完整过程。
 
