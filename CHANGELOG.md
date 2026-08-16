@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.2] — docs & packaging
+
+- README expanded to the ecosystem 9-section standard (Quick start,
+  Configuration, Permissions & data, Troubleshooting, License & security).
+- Declared `react` and the injected official client packages as
+  peerDependencies.
+
 ## [1.5.1] — trace count fix
 
 - Fixed: the turn trace line showed "Processed 0 steps" on the first render

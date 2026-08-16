@@ -1,6 +1,6 @@
 {
   "name": "dsh-result-only-view",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Results-only toggle for the DeepSeek Harness Web GUI: hides thinking and tool-call process nodes so a conversation shows only final answers, while keeping a single live status line (the latest running step) during agent activity. Whitelisted interactive cards (ask_user_question, cordis_run) stay visible; approval prompts always render in the composer. zh-CN / en localized.",
   "type": "module",
   "main": "lib/index.js",
@@ -32,6 +32,11 @@
         "@deepseek-ai/dsh-client-locale"
       ]
     }
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "@deepseek-ai/dsh-client-runtime": "*",
+    "@deepseek-ai/dsh-client-locale": "*"
   },
   "repository": {
     "type": "git",
