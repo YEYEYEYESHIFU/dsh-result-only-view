@@ -33,6 +33,48 @@
       ]
     }
   },
+  "dshWorkshop": {
+    "schema": "omdsh-workshop-package/v1",
+    "type": "plugin",
+    "integration": {
+      "protocol": "harness-cordis",
+      "artifact": "cordis.patch.yml"
+    },
+    "install": {
+      "mode": "guided",
+      "adapter": "third-party",
+      "failurePolicy": "manual",
+      "touchesCurrentBeforeActivation": false
+    },
+    "lifecycle": {
+      "activation": "immediate",
+      "dispose": "supported"
+    },
+    "permissions": [
+      "ui:conversation",
+      "dom:read",
+      "dom:observe",
+      "storage:localstorage",
+      "locale:register"
+    ],
+    "compatibility": {
+      "dshVersions": [
+        "0.1.0-rc.6"
+      ]
+    },
+    "capability": {
+      "id": "results-only-view",
+      "kind": "ui",
+      "invocation": "open a conversation containing thinking and tool-call rows and enable the Results only toggle in the composer",
+      "expected": "only user messages and final assistant replies remain visible while whitelisted interactive cards (ask_user_question, cordis_run) stay visible"
+    },
+    "evidence": {
+      "install": null,
+      "failureIsolation": null,
+      "hotReload": null,
+      "remove": null
+    }
+  },
   "peerDependencies": {
     "react": "^18.0.0",
     "@deepseek-ai/dsh-client-runtime": "*",
