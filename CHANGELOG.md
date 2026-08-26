@@ -1,5 +1,58 @@
 # Changelog
 
+## [1.6.2] - 2026-08-23
+
+- Added: context-injection / context-recall rows (`data-chat-flow-kind="context"`,
+  e.g. skill catalogs, workspace instruction files, recalled sessions) are now
+  folded with the rest of the turn's process. They re-appear through the turn
+  trace line (click to reveal / hover to peek) like tool and thinking rows, and
+  expand natively.
+
+## [1.6.1] - 2026-08-23
+
+- Fixed: reveal/fold of a turn's process rows could throw the reader's view
+  away from their reading position. The host's scroll-follow only defends the
+  at-bottom case, and browser scroll anchoring intermittently skips its
+  adjustment when the anchor node sits inside the rows being revealed/folded —
+  the viewport then visibly jumped (the content slipped up out of view and the
+  reader had to scroll back down; or a fold while reading inside the rows
+  clamped the view to the bottom). Every reveal, fold and live-line swap now
+  captures the flow anchor (deepest visible seat) and restores it to its
+  pre-change viewport position, so the reading position stays put regardless of
+  the browser's anchoring.
+- Added: live chips are now clickable. Clicking (or Enter/Space on) a running
+  step's chip keeps that step's native row visible and expands it, so the
+  actual arguments/output can be inspected while it runs — restoring the
+  pre-chips ability to expand running thinking/tool rows; the row stays
+  visible after the step settles.
+- Fixed: revealed tool rows with nested sub-calls now show their sub-steps
+  whether or not the row is expanded (the `[data-subcalls]` container was
+  permanently hidden by the base CSS even when the seat was revealed).
+
+## [1.6.0] - 2026-08-22
+
+- Added: live-summary chips. While a tool call or think block is running, a
+  compact one-line chip per active step (tool name + short args hint, or the
+  latest thinking line) replaces the single forced-native-row status line.
+  Chips are rendered by the plugin into the chat flow, follow streaming text
+  like the native rows (scroll-follow + clip), and disappear as soon as the
+  step settles. Chips are styled as plain lines — transparent background, no
+  border, native 14px/24px metrics — so live updates never get a pill box and
+  chip ↔ fallback-native-row swaps are visually seamless. Whitelisted
+  interactive cards (`ask_user_question`, `cordis_run`) stay visible
+  natively and never get a chip.
+- Added: Auto vs Manual process fold mode (Settings → General → Results only).
+  Auto (default) folds a settled turn's process rows automatically, as
+  before. Manual keeps a settled turn's process rows visible and folds that
+  turn only from its trace line ("Hide process"). The default stays Auto —
+  matching the plugin's original behavior and the always-auto design of the
+  dsh-auto-collapse competitor; switching modes resets per-turn fold state.
+- Added: hover a folded turn's trace line to peek at its process rows. The
+  peek follows the pointer while it stays inside the conversation (flicker-
+  free around the layout shift) and folds back once the pointer leaves.
+- The MutationObserver now also watches characterData so chip summaries track
+  streaming text; previously only childList and data-state were observed.
+
 ## [1.5.2] — docs & packaging
 
 - README expanded to the ecosystem 9-section standard (Quick start,
