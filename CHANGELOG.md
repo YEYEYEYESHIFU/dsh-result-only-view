@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.6.3] - 2026-08-27
+
+- Changed: the turn trace line no longer reveals a folded turn's process rows
+  on hover ("hover-peek" removed). Expanding is strictly click-driven now:
+  click the `Processed N steps · Xs` line to reveal that turn's process rows,
+  click again to fold them back — moving the pointer across the line (or across
+  the revealed rows) never expands or collapses anything. The hover keep-alive
+  machinery was removed with it; clicks still re-fold instantly.
+
 ## [1.6.2] - 2026-08-23
 
 - Added: context-injection / context-recall rows (`data-chat-flow-kind="context"`,

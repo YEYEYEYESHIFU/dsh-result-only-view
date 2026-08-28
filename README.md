@@ -12,7 +12,7 @@ A **Results only** toggle for the DeepSeek Harness Web GUI. Turn it on and think
 
 - Default on; the state persists in `localStorage`.
 - **While the agent runs** — one compact chip per running step (tool name + args hint, or the latest thinking line). Click a chip to reveal and expand that step's native row mid-run. With no active step, a single live status line shows the latest one.
-- **After a turn settles** — a `Processed N steps · Xs ▸` trace appears at the turn tail: click to expand that turn's process rows, hover to peek without expanding.
+- **After a turn settles** — a `Processed N steps · Xs ▸` trace appears at the turn tail: click to expand that turn's process rows; click again to fold them back. Moving the mouse across the line does nothing — expansion is strictly click-driven.
 - **Fold modes** — Auto folds settled turns for you; Manual keeps them visible until you fold them from the trace line.
 - **Never hidden** — whitelisted interactive cards (`ask_user_question`, `cordis_run`) and composer approval prompts stay visible.
 - Settings → General → Results only: show/hide the trace, restore animations under reduced motion, pick the fold mode. zh-CN/en localized.
@@ -37,7 +37,7 @@ DeepSeek Harness Web 的「只看结果」开关。开启后思考行、工具�
 
 - 默认开启，状态保存在 `localStorage`。
 - **Agent 运行中**：每个进行中的步骤显示一枚摘要芯片（工具名 + 参数提示，或最新一行思考）。点击芯片可立即展开该步骤的原生行查看参数与输出；没有运行中步骤时显示一条实时状态行。
-- **回合结束后**：回合尾部出现「已处理 N 步 · Xs ▸」，点击展开该回合的过程行，悬停可临时预览。
+- **回合结束后**：回合尾部出现「已处理 N 步 · Xs ▸」，点击展开该回合的过程行，再次点击收起。鼠标滑过该行不会有任何反应——只有点击才会展开。
 - **折叠方式**：自动——回合结束后自动折叠过程行；手动——保留过程行，由你点击痕迹行折叠。
 - **永不隐藏**：白名单交互卡片（`ask_user_question`、`cordis_run`）与输入框审批提示始终可见。
 - 设置 → 常规 → 只看结果：开关痕迹行、减少动态效果下恢复动画、选择折叠方式。中英双语。
